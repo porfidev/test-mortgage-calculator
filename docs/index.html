@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mortgage Calculator</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="./styles.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="page">
+  <div class="main-container">
+    <h1 class="app-title">Mortgage Calculator</h1>
+    <hr>
+    <div class="child-container">
+      <div class="app-form-container">
+        <form id="mc-form" novalidate>
+          <fieldset>
+            <legend>Change values to calculate your results</legend>
+            <hr>
+            <div class="control-container slider first">
+              <label for="range">Years of mortgage:</label>
+              <div class="range-control">
+                <span class="min-range">1</span>
+                <input id="range" max="40" min="1" name="range" type="range" value="30">
+                <span class="max-range">40</span>
+              </div>
+              <input class="range-number" id="range-text" name="range-text" readonly value="30">
+            </div>
+            <div class="control-container slider">
+              <label for="rate">Rate of Interest (%):</label>
+              <div class="range-control">
+                <span class="min-range">0.1</span>
+                <input id="rate" max="100" min="1" name="rate" type="range" value="80">
+                <span class="max-range">10</span>
+              </div>
+              <input class="range-number" id="rate-text" name="rate-text" readonly value="8.0">
+            </div>
+            <div class="control-container">
+              <label for="loan">Loan Amount</label>
+              <input class="currency" id="loan" name="loan" required type="text">
+              <span class="helper error loan"></span>
+            </div>
+            <div class="row">
+              <div class="control-container half">
+                <label for="tax">Annual Tax</label>
+                <input class="currency" id="tax" name="tax" required type="text">
+                <span class="helper error tax"></span>
+              </div>
+              <div class="control-container half">
+                <label for="insurance">Annual Insurance</label>
+                <input class="currency" id="insurance" name="insurance" required type="text">
+                <span class="helper error insurance"></span>
+              </div>
+            </div>
+            <button>Calculate</button>
+          </fieldset>
+        </form>
+      </div>
+      <div class="app-results-container">
+        <div class="app-results-content">
+          <h2>Your results</h2>
+          <div class="row">
+            <p>Principle & Interest</p>
+            <div class="amount">$ <span id="principle-and-interests">- -</span></div>
+          </div>
+          <div class="row">
+            <p>Tax</p>
+            <div class="amount">$ <span id="tax-result">- -</span></div>
+          </div>
+          <div class="row">
+            <p>Insurance</p>
+            <div class="amount">$ <span id="insurance-result">- -</span></div>
+          </div>
+          <hr>
+          <div class="row">
+            <p class="total">Total Monthly Payment</p>
+            <div class="amount total">$ <span id="monthly-payment">- -</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./app.min.js"></script>
+</body>
+</html>

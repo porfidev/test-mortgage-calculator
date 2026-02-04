@@ -1,3 +1,8 @@
+@import "./normalize.css";
+@import "./fonts.css";
+@import "./form-elements.css";
+@import "./results-elements.css";
+
 .page {
   background-color: #fefefe;
   width: 100vw;
